@@ -26,7 +26,7 @@ function HomePage() {
 
       <Navbar />
       <div className=" flex-wrap justify-center gap-10 p- bg-gray-300 min-h-screen" >
-
+        {/* 
         {
           //nisha is the iteative varible 
           //yo code le chai browser ma dekhaauxa ani yo case ma hamlay 
@@ -38,8 +38,16 @@ function HomePage() {
                 <Card key={nisha.id} haha={nisha} />
               </>
             )
-          })
-        }
+          }) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-10 bg-gray-300 min-h-screen">
+          {food.map((nisha) => (
+            <Card key={nisha.id} haha={nisha} />
+          ))}
+        </div>
+        
+        
+        
+        
 
 
       </div>

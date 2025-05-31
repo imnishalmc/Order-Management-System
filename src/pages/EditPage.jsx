@@ -1,8 +1,8 @@
 import Navbar from "../components/Navbar";
-import Button from "../components/Button";
-import { data, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+
 function EditPage() {
  const navigate= useNavigate()
     const { id } = useParams();
@@ -17,19 +17,20 @@ function EditPage() {
         fetchFood()
     }, [])
     const handelChange = (event) => {
-        let { name, value } = event.target;
+        let { name, value } = event.target
         setFood({
             ...food,
             [name]: value
         })
     };
+
 console.log(food,"edit ko food")
 
     const editOrder = async (event) => {
         event.preventDefault()
         const response = await axios.patch("http://localhost:5000/order/booking/" + id, food)
         if (response.status == 200) {
-            alert("edited sucessfully")
+            alert("Edited sucessfully")
                 navigate("/home")
         } else {
             alert("something went wrong")
@@ -54,7 +55,7 @@ console.log(food,"edit ko food")
                         </div>
 
                         <div className="flex gap-">
-                            <input type="text" onChange={handelChange} name="C_address" value={food.C_address} className="w-full rounded-md border border-slate-300 bg-white px-5 py-3 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 m-3" placeholder="customer address *" />
+                            <input type="text" onChange={handelChange} name="C_address" value={food.C_address} className="w-full rounded-md border border-slate-300 bg-white px-5 py-3 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 m-3" placeholder="paid/unpaid *" />
                         </div>
 
                         <div className="text-center">
@@ -67,6 +68,9 @@ console.log(food,"edit ko food")
                 </div>
 
             </form>
+
+       
+
         </>
     )
 }

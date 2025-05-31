@@ -40,7 +40,7 @@ function CreatePage() {
   //backend ma data  through the axios garda chai you have to pass the two thing \
   //1. url 2. data (data is the object that we are sending to the backend jun lai axios le json format ma lagxa )
   
-  const submitOrder = async (event) => {
+ const submitOrder = async (event) => {
     event.preventDefault(); //preventing the default behaviour of the form submission,matlab yo garesi page load huni aafai wala kura hatxa ani form ko data pani aba url ma jadaina  
     console.log("form submit bhayo");
     const response = await axios.post("http://localhost:5000/order/booking",orderDetails);
@@ -99,7 +99,7 @@ function CreatePage() {
               type="text"
               name="C_address"
               className="mt-1 block w-1/2 rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm m-5"
-              placeholder="customer address *"
+              placeholder="Paid/Unpaid *"
             />
           </div>
 
